@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate Phone Content</title>
+    <style>
+        /* Default styles for portrait */
+        body {
+            transform: none;
+            transition: transform 0.5s ease;
+        }
+        /* Styles for landscape */
+        body.landscape {
+            transform: rotate(90deg);
+            transform-origin: left top;
+            width: 100vh;
+            height: 100vw;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Content to Rotate</h1>
+        <p>This content will rotate based on device orientation.</p>
+        <button onclick="applyRotation()">Rotate</button>
+    </div>
+
+    <script>
+        function applyRotation() {
+            if (screen.width < 576) {
+                document.body.classList.add('landscape');
+            } else {
+                document.body.classList.remove('landscape');
+            }
+        }
+
+        // Apply rotation on load
+       
+
+        // Apply rotation on orientation change
+        window.addEventListener('resize', applyRotation);
+        window.addEventListener('orientationchange', applyRotation);
+    </script>
+</body>
+</html>
