@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Artbox</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('frontend/images/logo.png') }}">
 
     @include('layouts.style')
     @yield('style')

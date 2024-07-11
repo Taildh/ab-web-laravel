@@ -183,7 +183,15 @@ $(".project-item").on("click", function () {
         data: {
             id: id
         },
+        beforeSend(){
+            $("#mainImage").hide();
+            $(".project-detail .title").text("");
+            $(".project-detail .area").text("");
+            $(".project-detail .description").text("");
+        },
         success(response) {
+            $("#mainImage").show();
+
             $(".project-detail .title").text(response.title);
             $(".project-detail .area").text(response.area);
             $(".project-detail .description").text(response.description);
@@ -204,8 +212,11 @@ $(".project-item").on("click", function () {
 function updateImages(newImages) {
     $('.list-images').slick('slickRemove', null, null, true);
 
-    newImages.forEach(function(image) {
+    newImages.forEach(function(image, index) {
         var newSlide = '<div><img src="' + bannerPath + image.path + '" alt="" class="slick-item"></div>';
+        if (index === 0) {
+            newSlide = '<div><img src="' + bannerPath + image.path + '" alt="" class="slick-item hovered"></div>';
+        }
         $('.list-images').slick('slickAdd', newSlide);
     });
 

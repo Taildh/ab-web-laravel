@@ -1,8 +1,8 @@
 @charset "UTF-8";
 @import "scss/reset.css";
 @font-face {
-    font-family: RaleWayRegular;
-    src: url("/frontend/fonts/Raleway-Regular.ttf");
+    font-family: RalewayRegular;
+    src: url("/frontend/fonts/RalewayRegular.ttf");
 }
 @font-face {
     font-family: RaleWay;
@@ -33,12 +33,28 @@
     src: url("/frontend/fonts/MontserratRegular.otf");
 }
 @font-face {
+    font-family: MontserratSemiBoldItalic;
+    src: url("/frontend/fonts/MontserratSemiBoldItalic.ttf");
+}
+@font-face {
+    font-family: MontserratLightItalic;
+    src: url("/frontend/fonts/MontserratLightItalic.ttf");
+}
+@font-face {
+    font-family: MontserratExtraLightItalic;
+    src: url("/frontend/fonts/MontserratExtraLightItalic.ttf");
+}
+@font-face {
     font-family: AvenirNextDemiBoldItalic;
     src: url("/frontend/fonts/AvenirNextBoldItalic.otf");
 }
 @font-face {
     font-family: AvenirNextUltraLightItalic;
     src: url("/frontend/fonts/AvenirNextUltraLightItalic.otf");
+}
+@font-face {
+    font-family: MontserratExtraLight;
+    src: url("/frontend/fonts/MontserratExtraLight.ttf");
 }
 main {
     padding: 0 80px 100px;
@@ -78,7 +94,7 @@ main {
     font-size: 14px;
     line-height: 50px;
     padding: 0 5px;
-    font-family: AvenirUltraLight, sans-serif;
+    font-family: MontserratExtraLight, sans-serif;
 }
 .header-wrapper .toggle-menu {
     display: none;
@@ -131,7 +147,7 @@ main {
     letter-spacing: 0.8em;
     text-transform: uppercase;
     font-weight: 400;
-    font-family: AvenirRegular, sans-serif;
+    font-family: MontserratRegular, sans-serif;
 }
 .banner-wrapper .banner-mobile {
     display: none;
@@ -156,29 +172,36 @@ main {
     text-align: center;
     font-size: 18px;
     color: #605E5E;
-    font-family: AvenirNextDemiBoldItalic, sans-serif;
+    font-family: MontserratSemiBoldItalic, sans-serif;
     font-style: italic;
     letter-spacing: 0.08em;
 }
 .introduction-wrapper .introduction-content {
     margin-top: 20px;
     display: flex;
+    align-items: center;
 }
 .introduction-wrapper .introduction-content .introduction-image {
     text-align: center;
+    flex: 1;
 }
 .introduction-wrapper .introduction-content .introduction-image img {
-    width: 50%;
+    width: 100%;
+    height: 500px;
 }
 .introduction-wrapper .introduction-content .intro-text {
+    flex: 1;
     font-size: 20px;
     color: #363636;
-    text-align: center;
-    width: 50%;
     margin: 50px auto 0;
     letter-spacing: normal;
     line-height: 1.6em;
     font-family: RaleWayRegular, sans-serif;
+}
+
+.introduction-wrapper .introduction-content .intro-text p {
+    padding: 0 25%;
+    text-align: justify;
 }
 
 /* INTRODUCTION */
@@ -192,7 +215,7 @@ main {
     text-align: center;
     font-size: 18px;
     color: #605E5E;
-    font-family: AvenirNextDemiBoldItalic, sans-serif;
+    font-family: MontserratSemiBoldItalic, sans-serif;
     font-style: italic;
     letter-spacing: 0.08em;
 }
@@ -251,7 +274,7 @@ main {
     font-size: 17px;
     font-style: italic;
     letter-spacing: 0.08em;
-    font-family: RaleWayRegular, sans-serif;
+    font-family: MontserratSemiBoldItalic, sans-serif;
 }
 .project-category-wrapper .project-list .project-item .content .area {
     margin-top: 15px;
@@ -260,7 +283,7 @@ main {
     font-size: 14px;
     font-style: italic;
     letter-spacing: 0.08em;
-    font-family: AvenirUltraLight, sans-serif;
+    font-family: MontserratLightItalic, sans-serif;
 }
 .project-category-wrapper .project-list .project-item-active .content {
     opacity: 1;
@@ -289,7 +312,7 @@ main {
     text-align: center;
     font-size: 18px;
     color: #605E5E;
-    font-family: AvenirNextDemiBoldItalic, sans-serif;
+    font-family: MontserratSemiBoldItalic, sans-serif;
     font-style: italic;
     letter-spacing: 0.08em;
 }
@@ -345,7 +368,7 @@ main {
 }
 .footer .footer-wrapper .copyright {
     font-size: 14px;
-    font-family: AvenirNextUltraLightItalic, sans-serif;
+    font-family: MontserratExtraLightItalic, sans-serif;
     font-style: italic;
     display: block;
     margin: 5px 0 15px;
@@ -382,7 +405,7 @@ main {
     font-size: 18px;
     color: #363636;
     font-style: italic;
-    font-family: AvenirNextRegular, sans-serif;
+    font-family: MontserratRegular, sans-serif;
 }
 .modal-body .project-detail .description {
     margin-top: 18px;
@@ -710,6 +733,9 @@ main {
     }
     .introduction-wrapper .introduction-content .intro-text {
         width: 90%;
+    }
+    .introduction-wrapper .introduction-content .intro-text p {
+        padding: 0;
     }
     .project-category-wrapper .project-list {
         margin-top: 50px;
