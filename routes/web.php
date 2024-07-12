@@ -27,6 +27,10 @@ Route::post('/login', [LoginController::class, 'postLogin'])->name('postLogin');
 Route::get('/get-constructions', [FrontendConstruction::class, 'show']);
 
 Route::middleware(['auth'])->group(function () {
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('/forgot-password', [LoginController::class, 'forgotPassword'])->name('forgotPassword');
+    Route::post('/forgot-password', [LoginController::class, 'postForgotPassword'])->name('postForgotPassword');
+
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::prefix('/banners')->group(function () {
         Route::get('/', [BannerController::class, 'index'])->name('banner.index');

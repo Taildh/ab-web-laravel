@@ -22,6 +22,11 @@
     </div>
     <!-- /.login-logo -->
     <div class="card">
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
         <div class="card-body login-card-body">
             <p class="login-box-msg">Đăng nhập</p>
             <form action="{{ route('postLogin') }}" method="post">

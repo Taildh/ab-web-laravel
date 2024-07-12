@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ConstructionRequest extends FormRequest
+class ForgotPasswordRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,20 +22,17 @@ class ConstructionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required',
-            'area' => 'required',
-            'description' => 'nullable',
-            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'old_password' => 'required',
+            'password' => 'required|min:6|confirmed',
         ];
     }
 
     public function messages()
     {
         return [
-            'title.required' => 'Vui lòng nhập tiêu đề',
-            'area.required' => 'Vui lòng nhập diện tích',
-            'images.image' => 'File được tải lên không phải là file ảnh',
-            'images.mimes' => 'Vui lòng chọn file với định dạng: jpeg, png, jpg',
+            'old_password.required' => 'Vui lòng nhập mật khẩu hiện tại',
+            'password.required' => 'Vui lòng nhập mật khẩu mới',
+            'password.confirmed' => 'Nhập lại mật khẩu không khớp'
         ];
     }
 }
