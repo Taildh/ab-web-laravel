@@ -68,13 +68,7 @@
                 </div>
                 <div class="intro-text">
                     <p>
-
-                    Tôi là đoạn văn. Nhấp vào đây để thêm văn bản và chỉnh sửa. Dễ thôi. Chỉ cần nhấp vào “Chỉnh
-                    sửa văn
-                    bản” hoặc nhấp đúp để thêm nội dung và thay đổi phông chữ. Tôi là nơi tuyệt vời để bạn kể
-                    một câu
-                    chuyện
-                    và cho người dùng biết thêm về bạn.
+                        {{ $setting->introduce_text }}
                     </p>
 
                 </div>
@@ -131,7 +125,7 @@
                     <img src="{{ asset('frontend/images/icon-instagram.png')}}" alt="instagram">
                 </a>
             </div>
-            <span class="copyright">© 2035 bản quyền của Artbox</span>
+            <span class="copyright">© 2024 bản quyền của Artbox</span>
         </div>
     </div>
 </footer>
