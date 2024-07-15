@@ -70,8 +70,8 @@
                             <span class="d-block mb-3 title"></span>
                             <span class="d-block title area"></span>
 
-                            <p class="description">
-                                Mô tả ảnh của bạn ở đây
+                            <p class="description" style="text-align: justify">
+
                             </p>
                         </div>
                     </div>

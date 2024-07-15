@@ -17,6 +17,14 @@
                     </p>
                 </a>
             </li>
+            <li class="nav-item">
+                <a href="{{ route('settings.index') }}" class="nav-link">
+                    <i class="nav-icon fa fa-cog"></i>
+                    <p>
+                        Thiết lập
+                    </p>
+                </a>
+            </li>
         </ul>
     </nav>
 </div>

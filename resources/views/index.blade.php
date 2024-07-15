@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artbox</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('frontend/images/logo.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('frontend/images/ab-favicon.png') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -61,10 +61,10 @@
     <section class="section-fade-in" id="introduction">
         <div class="introduction-wrapper">
             <div class="line"></div>
-            <h1 class="heading">01. giới thiệu</h1>
+            <h1 class="heading">01. Giới thiệu</h1>
             <div class="introduction-content">
                 <div class="introduction-image">
-                    <img src="{{ asset('frontend/images/19.jpg') }}" alt="team">
+                    <img src="{{ asset('storage/') . '/' .$setting->introduce_image }}" alt="team">
                 </div>
                 <div class="intro-text">
                     <p>
@@ -84,7 +84,7 @@
     <section class="section-fade-in" id="project-category">
         <div class="project-category-wrapper">
             <div class="line"></div>
-            <h1 class="heading">02. công trình</h1>
+            <h1 class="heading">02. Công trình</h1>
             <div class="project-list">
                 @foreach($constructions as $item)
                     <div class="project-item section-fade-in" data-id="{{ $item->id }}">
@@ -107,11 +107,11 @@
     <section class="section-fade-in" id="contact">
         <div class="contact-wrapper">
             <div class="line"></div>
-            <h1 class="heading">03. liên hệ</h1>
+            <h1 class="heading">03. Liên hệ</h1>
             <div class="contact-info">
-                <a class="mail" href="mailto:artbox.corp@gmail.com">artbox.corp@gmail.com</a>
-                <span class="hotline"> Hotline: 0988.500.060</span>
-                <span class="address">Toà E3A ngõ 2 Trần Kim Xuyến, Yên Hoà, Cầu Giấy, Hà Nội</span>
+                <a class="mail" href="{{ $setting->email }}">{{ $setting->email }}</a>
+                <span class="hotline"> Hotline: {{ substr($setting->phone_number, 0, 4) . '.' . substr($setting->phone_number, 4, 3) . '.' . substr($setting->phone_number, 7) }}</span>
+                <span class="address">{{ $setting->address }}</span>
             </div>
         </div>
     </section>
@@ -124,10 +124,10 @@
     <div class="footer">
         <div class="footer-wrapper">
             <div class="social-link">
-                <a href="https://www.facebook.com/thietkenoithatvanphong.artbox.com.vn/" target="_blank">
+                <a href="{{ $setting->facebook_url }}" target="_blank">
                     <img src="{{ asset('frontend/images/icon-fb.png') }}" alt="facebook">
                 </a>
-                <a href="https://www.instagram.com/thietkenoithat.artbox/" target="_blank">
+                <a href="{{ $setting->instagram_url }}" target="_blank">
                     <img src="{{ asset('frontend/images/icon-instagram.png')}}" alt="instagram">
                 </a>
             </div>

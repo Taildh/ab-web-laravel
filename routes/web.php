@@ -3,9 +3,10 @@
 use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\ConstructionController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\SettingController;
+use App\Http\Controllers\Frontend\ConstructionController as FrontendConstruction;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\LoginController;
-use App\Http\Controllers\Frontend\ConstructionController as FrontendConstruction;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,5 +44,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/{id}', [ConstructionController::class, 'edit'])->name('construction.edit');
         Route::post('/{id?}', [ConstructionController::class, 'save'])->name('construction.save');
         Route::delete('/{id}', [ConstructionController::class, 'destroy'])->name('construction.destroy');
+    });
+
+    Route::prefix('/settings')->group(function () {
+       Route::get('/', [SettingController::class, 'index'])->name('settings.index');
+       Route::post('/', [SettingController::class, 'save'])->name('settings.save');
     });
 });

@@ -26,10 +26,6 @@
 }
 @font-face {
     font-family: MontserratRegular;
-    src: url("/frontend/fonts/MontserratLight.ttf");
-}
-@font-face {
-    font-family: MontserratRegular;
     src: url("/frontend/fonts/MontserratRegular.otf");
 }
 @font-face {
@@ -94,7 +90,7 @@ main {
     font-size: 14px;
     line-height: 50px;
     padding: 0 5px;
-    font-family: MontserratExtraLight, sans-serif;
+    font-family: MontserratLight, sans-serif;
 }
 .header-wrapper .toggle-menu {
     display: none;
@@ -177,7 +173,7 @@ main {
     letter-spacing: 0.08em;
 }
 .introduction-wrapper .introduction-content {
-    margin-top: 20px;
+    margin-top: 50px;
     display: flex;
     align-items: center;
 }
@@ -292,7 +288,7 @@ main {
 /* END PROJECT CATEGORY */
 /* CONTACT */
 .contact-wrapper {
-    margin-top: 10px;
+    margin-top: 50px;
 }
 .contact-wrapper .line {
     position: relative;
@@ -535,12 +531,14 @@ main {
 }
 
 .slick-prev {
-    left: 0px;
+    left: -20px;
+    color: rgba(128, 128, 128, 0.9);
 }
 
 .slick-next {
-    right: 0px;
+    right: -20px;
 }
+
 
 .slick-next:before, .slick-prev:before {
     color: rgba(128, 128, 128, 0.8);
@@ -569,6 +567,20 @@ main {
     }
 }
 @media screen and (max-width: 576px) {
+
+    .slick-prev {
+        left: 0px;
+    }
+
+    .slick-next {
+        right: 0px;
+    }
+
+    .modal-body .slick-list {
+        margin: 0 0px; /* Negative margin to compensate for slide padding */
+    }
+
+
     body {
         overflow-x: hidden;
         transition: transform 0.5s ease-in-out;
@@ -581,6 +593,7 @@ main {
         height: 100vw; /* Use viewport width as height after rotation */
         overflow-x: hidden; /* Hide overflow due to rotation */
     }
+
     main {
         padding: 0;
     }
@@ -825,6 +838,7 @@ main {
     .modal-body .main-image-wrapper .main-image {
         height: 213px;
     }
+
     /* END MODAL RES*/
 }
 @keyframes swingIn {
