@@ -427,6 +427,29 @@ main {
 
 /* END FOOTER */
 /* MODAL */
+.modal-fullscreen-slider{
+    position: relative;
+}
+
+.modal-fullscreen-slider  .button-close-modal-fullscreen {
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    right: 30px;
+    width: auto;
+    border: none;
+    background: none;
+}
+.modal-fullscreen-slider  .button-collapse-modal-screen {
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    left: 30px;
+    width: auto;
+    border: none;
+    background: none;
+}
+
 .modal-body {
     padding: 50px;
 }
@@ -471,9 +494,9 @@ main {
 }
 
 .modal-body .slider-image {
-    margin: 30px 70px;
+    /*margin: 30px 70px;*/
     background-color: #FFFFFF;
-    display: none;
+    /*display: none;*/
 }
 
 .modal-body .slider-image .carousel-item {
@@ -484,8 +507,8 @@ main {
 
 .modal-body .slider-image .carousel-item .project-detail-image {
     cursor: pointer;
-    height: calc(100vh - 300px);
-    width: 100%;
+    height: 98vh;
+    width: 70%;
 }
 
 .modal-body .slider-image .carousel-item .image-full-width {
@@ -516,11 +539,11 @@ main {
 }
 
 .modal-body .slider-image .carousel-control-prev {
-    left: 0px;
+    left: 20px;
 }
 
 .modal-body .slider-image .carousel-control-next {
-    right: 0px;
+    right: 20px;
 }
 
 .modal-body .slider-image-fullscreen {
@@ -674,7 +697,8 @@ main {
         padding: 0;
     }
     .modal-body .slider-image {
-        display: none;
+        display: block;
+        margin-top: 0;;
     }
 
     .modal-body .list-images-wrapper {
@@ -700,6 +724,11 @@ main {
 }
 
 @media screen and (max-width: 576px) {
+    .modal-fullscreen-slider .modal-body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     .slick-prev {
         left: 0px;
@@ -957,8 +986,7 @@ main {
     }
 
     .modal-body .slider-image {
-        display: none;
-        margin: 20px 0;
+        display: block;
     }
 
     .modal-body .slider-image .carousel-item {
@@ -976,7 +1004,7 @@ main {
     .modal-body .slider-image .carousel-control-next {
         width: 20px;
         height: 20px;
-        top: 50%;
+        top: 45%;
         transform: none;
         color: #363636;
         font-size: 20px;

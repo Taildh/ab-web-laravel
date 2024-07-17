@@ -26,14 +26,20 @@ function closeModal() {
     modal.hide();
 }
 
+$("#fullScreenModal").on('hidden.bs.modal', function () {
+
+});
+
 function expandSlide() {
-    const screenWidth = screen.width;
+    $("#fullScreenModal").modal('show');
 
-    if (screenWidth <= 576 && screen.orientation.type.startsWith('portrait')) {
-        // rotateScreen();
-        return;
-    }
-
+    // const screenWidth = screen.width;
+    //
+    // if (screenWidth <= 576 && screen.orientation.type.startsWith('portrait')) {
+    //     // rotateScreen();
+    //     return;
+    // }
+    //
     let slider = document.getElementById("projectSlider");
     let firstHoveredImageSrc = $(".slick-item.hovered").first().attr("src");
     $("#projectSlider .carousel-inner .carousel-item").each(function() {
@@ -43,50 +49,38 @@ function expandSlide() {
             $(this).addClass("active");
         }
     });
-    if (!document.fullscreenElement) {
-        if (slider.requestFullscreen) {
-            slider.requestFullscreen();
-
-        } else if (slider.mozRequestFullScreen) {
-            // Firefox
-            slider.mozRequestFullScreen();
-        } else if (slider.webkitRequestFullscreen) {
-            // Chrome, Safari and Opera
-            slider.webkitRequestFullscreen();
-        } else if (slider.msRequestFullscreen) {
-            // IE/Edge
-            slider.msRequestFullscreen();
-        }
-    }
+    // if (!document.fullscreenElement) {
+    //     if (slider.requestFullscreen) {
+    //         slider.requestFullscreen();
+    //
+    //     } else if (slider.mozRequestFullScreen) {
+    //         // Firefox
+    //         slider.mozRequestFullScreen();
+    //     } else if (slider.webkitRequestFullscreen) {
+    //         // Chrome, Safari and Opera
+    //         slider.webkitRequestFullscreen();
+    //     } else if (slider.msRequestFullscreen) {
+    //         // IE/Edge
+    //         slider.msRequestFullscreen();
+    //     }
+    // }
 }
 
 function exitFullScreen() {
-    if (document.exitFullscreen) {
-        document.exitFullscreen();
+    $("#fullScreenModal").modal('hide');
 
-        let activeImageSrc = $("#projectSlider .carousel-inner .carousel-item.active img").attr("src");
+    let activeImageSrc = $("#projectSlider .carousel-inner .carousel-item.active img").attr("src");
 
-        $(".slick-item").removeClass("hovered");
+    $(".slick-item").removeClass("hovered");
 
-        $(".slick-item").each(function(index) {
-            if ($(this).attr("src") === activeImageSrc) {
-                $(this).closest(".slick-item").addClass("hovered");
-            }
-            let slickIndex = Math.floor(index / 5) * 5;
-            $(".list-images").slick('slickGoTo', slickIndex );
-        });
+    $(".slick-item").each(function (index) {
+        if ($(this).attr("src") === activeImageSrc) {
+            $(this).closest(".slick-item").addClass("hovered");
+        }
+        let slickIndex = Math.floor(index / 5) * 5;
+        $(".list-images").slick('slickGoTo', slickIndex);
+    });
 
-
-    } else if (document.mozCancelFullScreen) {
-        // Firefox
-        document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) {
-        // Chrome, Safari and Opera
-        document.webkitExitFullscreen();
-    } else if (document.msExitFullscreen) {
-        // IE/Edge
-        document.msExitFullscreen();
-    }
 }
 
 function hideNavSlide() {
@@ -193,7 +187,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
 const bannerPath = 'storage/'
 
 $(".project-item").on("click", function () {
@@ -205,7 +198,7 @@ $(".project-item").on("click", function () {
         data: {
             id: id
         },
-        beforeSend(){
+        beforeSend() {
             $("#mainImage").hide();
             $(".project-detail .title").text("");
             $(".project-detail .area").text("");
@@ -234,7 +227,7 @@ $(".project-item").on("click", function () {
 function updateImages(newImages) {
     $('.list-images').slick('slickRemove', null, null, true);
 
-    newImages.forEach(function(image, index) {
+    newImages.forEach(function (image, index) {
         var newSlide = '<div><img src="' + bannerPath + image.path + '" alt="" class="slick-item"></div>';
         if (index === 0) {
             newSlide = '<div><img src="' + bannerPath + image.path + '" alt="" class="slick-item hovered"></div>';
@@ -250,7 +243,7 @@ function updateCarousel(newImages) {
     var $carouselInner = $('.carousel-inner');
     $carouselInner.empty();  // Clear existing items
 
-    newImages.forEach(function(image, index) {
+    newImages.forEach(function (image, index) {
         var isActive = index === 0 ? 'active' : '';
         var newItem = `
                 <div class="carousel-item ${isActive}">
