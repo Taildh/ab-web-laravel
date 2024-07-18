@@ -226,7 +226,9 @@ main {
 }
 
 .introduction-wrapper .introduction-content .intro-text p {
-    padding: 0 25%;
+    /*padding: 0 25%;*/
+    padding-left: 20%;
+    padding-right: 10%;
     text-align: justify;
 }
 
