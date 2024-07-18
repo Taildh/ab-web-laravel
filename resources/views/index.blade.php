@@ -31,11 +31,11 @@
             </div>
             <div class="nav">
                 <li><a href="#index" class="scroll-link active" onclick="scrollToTop()">trang chủ</a></li>
-                <li><a href="#introduction" class="scroll-link" onclick="scrollToCenter('introduction')">giới
+                <li><a href="#gioi-thieu" class="scroll-link" onclick="scrollToCenter('gioi-thieu')">giới
                         thiệu</a></li>
-                <li><a href="#job" class="scroll-link" onclick="scrollToCenter('project-category')">công trình</a>
+                <li><a href="#cong-trinh" class="scroll-link" onclick="scrollToCenter('cong-trinh')">công trình</a>
                 </li>
-                <li><a href="#contact" class="scroll-link" onclick="scrollToCenter('contact')">liên hệ</a></li>
+                <li><a href="#lien-he" class="scroll-link" onclick="scrollToCenter('lien-he')">liên hệ</a></li>
             </div>
             <div class="toggle-menu">
                 <div class="line1"></div>
@@ -58,7 +58,7 @@
             </div>
         </div>
     </section>
-    <section class="section-fade-in" id="introduction">
+    <section class="section-fade-in" id="gioi-thieu">
         <div class="introduction-wrapper">
             <div class="line"></div>
             <h1 class="heading">01. Giới thiệu</h1>
@@ -75,7 +75,7 @@
             </div>
         </div>
     </section>
-    <section class="section-fade-in" id="project-category">
+    <section class="section-fade-in" id="cong-trinh">
         <div class="project-category-wrapper">
             <div class="line"></div>
             <h1 class="heading">02. Công trình</h1>
@@ -98,7 +98,7 @@
             </div>
         </div>
     </section>
-    <section class="section-fade-in" id="contact">
+    <section class="section-fade-in" id="lien-he">
         <div class="contact-wrapper">
             <div class="line"></div>
             <h1 class="heading">03. Liên hệ</h1>

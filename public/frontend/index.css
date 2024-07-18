@@ -427,6 +427,11 @@ main {
 
 /* END FOOTER */
 /* MODAL */
+.modal-body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .modal-fullscreen-slider{
     position: relative;
 }
@@ -450,78 +455,82 @@ main {
     background: none;
 }
 
-.modal-body {
+.modal-fullscreen-body {
     padding: 50px;
 }
 
-.modal-body .heading-modal {
+.modal-fullscreen-body .heading-modal {
     display: flex;
     justify-content: space-between;
 }
 
-.modal-body .heading-modal button {
+.modal-fullscreen-body .heading-modal button {
     background: none;
     border: none;
     padding: 8px 10px;
 }
 
-.modal-body .heading-modal .button-back-modal {
+.modal-fullscreen-body .heading-modal .button-back-modal {
     display: none;
 }
 
-.modal-body .heading-modal .button-expand-modal:hover,
-.modal-body .heading-modal .button-close-modal:hover {
+.modal-fullscreen-body .heading-modal .button-expand-modal:hover,
+.modal-fullscreen-body .heading-modal .button-close-modal:hover {
     background-color: rgba(180, 172, 172, 0.1);
     border-radius: 50%;
 }
 
-.modal-body .project-detail {
+.modal-fullscreen-body .project-detail {
     padding: 100px 50px 0;
 }
 
-.modal-body .project-detail .title {
+.modal-fullscreen-body .project-detail .title {
     font-size: 18px;
     color: #363636;
     font-style: italic;
     font-family: MontserratRegular, sans-serif;
 }
 
-.modal-body .project-detail .description {
+.modal-fullscreen-body .project-detail .description {
     margin-top: 18px;
     font-size: 20px;
     font-family: RaleWayRegular, sans-serif;
     line-height: 25px;
 }
 
-.modal-body .slider-image {
+
+.modal-fullscreen-body {
+    width: 100%;
+    height: 100%;
+}
+
+.modal-fullscreen-body .slider-image {
     /*margin: 30px 70px;*/
     background-color: #FFFFFF;
     /*display: none;*/
 }
 
-.modal-body .slider-image .carousel-item {
+.modal-fullscreen-body .slider-image .carousel-item {
     transition: transform 0.7s ease, opacity 1s ease;
     display: flex;
     justify-content: center;
 }
 
-.modal-body .slider-image .carousel-item .project-detail-image {
+.modal-fullscreen-body .slider-image .carousel-item .project-detail-image {
     cursor: pointer;
-    height: 98vh;
-    width: 70%;
+    height: 100vh;
+    width: auto;
+    max-width: 70%;
 }
 
-.modal-body .slider-image .carousel-item .image-full-width {
+.modal-fullscreen-body .slider-image .carousel-item .image-full-width {
     width: 80vw;
     height: 100vh;
 }
 
-.modal-body .slider-image .slider-header {
-    display: none;
-}
 
-.modal-body .slider-image .carousel-control-prev,
-.modal-body .slider-image .carousel-control-next {
+.modal-fullscreen-body .slider-image .carousel-control-prev,
+.modal-fullscreen-body .slider-image .carousel-control-next {
     width: 50px;
     height: 50px;
     top: 50%;
@@ -531,56 +540,23 @@ main {
     font-size: 30px;
 }
 
-.modal-body .slider-image .carousel-control-prev:hover,
-.modal-body .slider-image .carousel-control-next:hover {
+.modal-fullscreen-body .slider-image .carousel-control-prev:hover,
+.modal-fullscreen-body.slider-image .carousel-control-next:hover {
     background-color: rgba(180, 172, 172, 0.1);
     outline: none;
     border-radius: 50%;
 }
 
-.modal-body .slider-image .carousel-control-prev {
+.modal-fullscreen-body .slider-image .carousel-control-prev {
     left: 20px;
 }
 
-.modal-body .slider-image .carousel-control-next {
+.modal-fullscreen-body.slider-image .carousel-control-next {
     right: 20px;
 }
 
-.modal-body .slider-image-fullscreen {
-    position: relative;
-}
 
-.modal-body .slider-image-fullscreen .slider-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 20px;
-    display: flex;
-    z-index: 100000;
-    justify-content: space-between;
-    padding: 35px;
-}
-
-.modal-body .slider-image-fullscreen .slider-header .button-collapse,
-.modal-body .slider-image-fullscreen .slider-header .button-close {
-    width: 34px;
-    height: 34px;
-    padding: 20px;
-    border: none;
-    background: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.modal-body .slider-image-fullscreen .slider-header .button-collapse:hover,
-.modal-body .slider-image-fullscreen .slider-header .button-close:hover {
-    border-radius: 50%;
-    background-color: rgba(180, 172, 172, 0.1);
-}
-
-.modal-body .slider-image-fullscreen .carousel-item .project-detail-image {
+.modal-fullscreen-body .slider-image-fullscreen .carousel-item .project-detail-image {
     /*object-fit: contain;*/
     height: 100vh;
     max-width: 80vw;
@@ -588,53 +564,53 @@ main {
     box-shadow: 0 59px 38px rgba(22, 21, 21, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
-.modal-body .slider-image-fullscreen .carousel-item .image-full-width {
+.modal-fullscreen-body .slider-image-fullscreen .carousel-item .image-full-width {
     width: 100%;
     height: 100vh;
 }
 
-.modal-body .slider-image-fullscreen .carousel-control-prev {
+.modal-fullscreen-body .slider-image-fullscreen .carousel-control-prev {
     left: 2vw;
 }
 
-.modal-body .slider-image-fullscreen .carousel-control-next {
+.modal-fullscreen-body .slider-image-fullscreen .carousel-control-next {
     right: 2vw;
 }
 
-.modal-body .list-images-wrapper {
+.modal-fullscreen-body .list-images-wrapper {
     padding: 0;
     margin: 0 70px;
 }
 
-.modal-body .list-images-wrapper .list-images {
+.modal-fullscreen-body .list-images-wrapper .list-images {
     cursor: pointer;
 }
 
-.modal-body .list-images-wrapper .list-images div .slick-item {
+.modal-fullscreen-body .list-images-wrapper .list-images div .slick-item {
     width: 100%;
     max-width: 100%;
     display: block;
     height: 130px;
 }
 
-.modal-body .list-images-wrapper .list-images div .slick-item.hovered {
+.modal-fullscreen-body .list-images-wrapper .list-images div .slick-item.hovered {
     border: 2px solid #BA3026;
 }
 
-.modal-body .slick-slide {
+.modal-fullscreen-body .slick-slide {
     padding: 0 10px; /* Adjust spacing between slides */
 }
 
-.modal-body .slick-list {
+.modal-fullscreen-body .slick-list {
     margin: 0 -20px; /* Negative margin to compensate for slide padding */
 }
 
-.modal-body .main-image-wrapper {
+.modal-fullscreen-body .main-image-wrapper {
     margin: 30px 70px;
     cursor: pointer;
 }
 
-.modal-body .main-image-wrapper img {
+.modal-fullscreen-body .main-image-wrapper img {
     height: calc(100vh - 300px);
     width: 100%;
     object-fit: contain;
@@ -665,19 +641,19 @@ main {
 }
 
 /*@media (orientation: landscape) {*/
-/*    .modal-body {*/
+/*    .modal-fullscreen-body {*/
 /*        padding: 10px;*/
 /*    }*/
 
-/*    .modal-body .main-image-wrapper img {*/
+/*    .modal-fullscreen-body .main-image-wrapper img {*/
 /*        height: 83vh;*/
 /*    }*/
 
-/*    .modal-body .main-image-wrapper {*/
+/*    .modal-fullscreen-body .main-image-wrapper {*/
 /*        margin: 10px 70px;*/
 /*    }*/
 
-/*    .modal-body .list-images-wrapper .list-images div .slick-item {*/
+/*    .modal-fullscreen-body .list-images-wrapper .list-images div .slick-item {*/
 /*        height: 20vh;*/
 /*    }*/
 /*}*/
@@ -693,38 +669,38 @@ main {
     .banner-wrapper {
         margin-top: 0;
     }
-    .modal-body {
+    .modal-fullscreen-body {
         padding: 0;
     }
-    .modal-body .slider-image {
+    .modal-fullscreen-body .slider-image {
         display: block;
         margin-top: 0;;
     }
 
-    .modal-body .list-images-wrapper {
+    .modal-fullscreen-body .list-images-wrapper {
         margin: 0;
         padding: 0 70px;
     }
 
-    .modal-body .main-image-wrapper {
+    .modal-fullscreen-body .main-image-wrapper {
         margin: 0;
     }
-    .modal-body .main-image-wrapper img {
+    .modal-fullscreen-body .main-image-wrapper img {
         height: 83vh;
     }
-    .modal-body .main-image-wrapper {
+    .modal-fullscreen-body .main-image-wrapper {
         margin: 10px 70px;
     }
-    .modal-body .project-detail {
+    .modal-fullscreen-body .project-detail {
         padding: 20px 70px 0;
     }
-    .modal-body .heading-modal {
+    .modal-fullscreen-body .heading-modal {
 
     }
 }
 
 @media screen and (max-width: 576px) {
-    .modal-fullscreen-slider .modal-body {
+    .modal-fullscreen-slider .modal-fullscreen-body {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -738,7 +714,7 @@ main {
         right: 0px;
     }
 
-    .modal-body .slick-list {
+    .modal-fullscreen-body .slick-list {
         margin: 0 0px; /* Negative margin to compensate for slide padding */
     }
 
@@ -962,46 +938,45 @@ main {
     }
 
     /* MODAL RES*/
-    .modal-body {
+    .modal-fullscreen-body {
         padding: 0;
     }
 
-    .modal-body .heading-modal {
+    .modal-fullscreen-body .heading-modal {
         display: flex;
         justify-content: space-between;
         padding: 20px 20px 0;
     }
 
-    .modal-body .heading-modal .button-back-modal {
+    .modal-fullscreen-body .heading-modal .button-back-modal {
         display: block;
         border: none;
         background-color: transparent;
         font-size: 20px;
     }
 
-    .modal-body .heading-modal .button-expand-modal,
-    .modal-body .heading-modal .button-close-modal {
+    .modal-fullscreen-body .heading-modal .button-expand-modal,
+    .modal-fullscreen-body .heading-modal .button-close-modal {
         display: none;
         margin: 20px 0;
     }
 
-    .modal-body .slider-image {
-        display: block;
-    }
 
-    .modal-body .slider-image .carousel-item {
+    .modal-fullscreen-body .slider-image .carousel-item {
         width: 100%;
     }
 
-    .modal-body .slider-image .carousel-item .project-detail-image {
-        width: 100vw;
-        height: 213px;
+    .modal-fullscreen-body .slider-image .carousel-item .project-detail-image {
+        width: auto;
+        max-width: 80vw;
+        /*height: auto;*/
+        height: 50vh;
         object-fit: cover;
         box-shadow: 0 -10px 10px -10px rgba(0, 0, 0, 0.5), 0 10px 10px -10px rgba(0, 0, 0, 0.5);
     }
 
-    .modal-body .slider-image .carousel-control-prev,
-    .modal-body .slider-image .carousel-control-next {
+    .modal-fullscreen-body .slider-image .carousel-control-prev,
+    .modal-fullscreen-body .slider-image .carousel-control-next {
         width: 20px;
         height: 20px;
         top: 45%;
@@ -1010,36 +985,36 @@ main {
         font-size: 20px;
     }
 
-    .modal-body .slider-image .carousel-control-prev {
+    .modal-fullscreen-body .slider-image .carousel-control-prev {
         left: 10px;
     }
 
-    .modal-body .slider-image .carousel-control-next {
+    .modal-fullscreen-body .slider-image .carousel-control-next {
         right: 10px;
     }
 
-    .modal-body .project-detail {
+    .modal-fullscreen-body .project-detail {
         padding: 20px 20px;
     }
 
-    .modal-body .list-images-wrapper {
+    .modal-fullscreen-body .list-images-wrapper {
         margin: 0 !important;
         padding: 0;
     }
 
-    .modal-body .list-images-wrapper .list-images {
+    .modal-fullscreen-body .list-images-wrapper .list-images {
         margin-top: 10px;
     }
 
-    .modal-body .list-images-wrapper .list-images div .slick-item {
+    .modal-fullscreen-body .list-images-wrapper .list-images div .slick-item {
         height: 65px;
     }
 
-    .modal-body .main-image-wrapper .main-image {
+    .modal-fullscreen-body .main-image-wrapper .main-image {
         height: 213px;
     }
 
-    .modal-body .main-image-wrapper {
+    .modal-fullscreen-body .main-image-wrapper {
         margin: 10px 0;
     }
 

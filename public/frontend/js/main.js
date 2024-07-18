@@ -26,11 +26,12 @@ function closeModal() {
     modal.hide();
 }
 
-$("#fullScreenModal").on('hidden.bs.modal', function () {
-
+$("#fullScreenModal").on('hide.bs.modal', function () {
+    $("#projectDetailModal").show();
 });
 
 function expandSlide() {
+    $("#projectDetailModal").hide();
     $("#fullScreenModal").modal('show');
 
     // const screenWidth = screen.width;

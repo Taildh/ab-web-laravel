@@ -1,7 +1,7 @@
 <div class="modal fade" id="fullScreenModal" tabindex="-1" aria-labelledby="fullScreenModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen modal-fullscreen-slider">
         <div class="modal-content">
-            <div class="modal-body" style="padding: 0">
+            <div class="modal-fullscreen-body" style="padding: 0">
                 <div class="row project-content">
                     <button type="button" class="button-close-modal-fullscreen" onclick="exitFullScreen()">
                         <img src="{{ asset('frontend/images/close-x.png') }}" alt="">
@@ -9,7 +9,7 @@
                     <button class="button-collapse-modal-screen" onclick="exitFullScreen()">
                         <img src="{{ asset('frontend/images/collapse1.png') }}" alt="">
                     </button>
-                    <div class="col-12 align-items-center">
+                    <div class="col-md-12 align-items-center">
                         <div id="projectSlider" class="slider-image carousel slide carousel-fade"
                              data-bs-interval="false">
                             <div class="carousel-inner">

@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
             <!-- Button trigger modal -->
-            <div class="modal-body">
+            <div class="modal-body modal-fullscreen-body">
                 <div class="heading-modal">
                     <button class="button-back-modal" onclick="closeModal()">
                         <img src="{{ asset('frontend/images/back.png') }}" alt="">
