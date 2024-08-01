@@ -28,11 +28,11 @@
             </div>
         @endif
         <div class="row">
-                <div class="col-md-6">
-            <div class="card card-primary">
-                <div class="card-header">
-                    <h3 class="card-title">Giới thiệu</h3>
-                </div>
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Giới thiệu</h3>
+                    </div>
                     <div class="card-body">
                         <div class="form-group">
                             <label for="title">Nội dung</label>
@@ -74,7 +74,7 @@
                         </div>
                         <div class="form-group">
                             <label for="title">Link instagram</label>
-                            <input class="form-control" name="instagram_url" value="{{ $setting->instagram_url }}" />
+                            <input class="form-control" name="instagram_url" value="{{ $setting->instagram_url }}"/>
 
                             @error('instagram_url')
                             <span class="text-danger">{{ $message }}</span>
@@ -82,7 +82,7 @@
                         </div>
                         <div class="form-group">
                             <label for="title">Địa chỉ email</label>
-                            <input class="form-control" name="email" value="{{ $setting->email }}" />
+                            <input class="form-control" name="email" value="{{ $setting->email }}"/>
 
                             @error('email')
                             <span class="text-danger">{{ $message }}</span>
@@ -90,7 +90,7 @@
                         </div>
                         <div class="form-group">
                             <label for="title">Số điện thoại</label>
-                            <input class="form-control" name="phone_number" value="{{ $setting->phone_number }}" />
+                            <input class="form-control" name="phone_number" value="{{ $setting->phone_number }}"/>
 
                             @error('phone_number')
                             <span class="text-danger">{{ $message }}</span>
@@ -98,7 +98,7 @@
                         </div>
                         <div class="form-group">
                             <label for="title">Địa chỉ</label>
-                            <input class="form-control" name="address" value="{{ $setting->address }}" />
+                            <input class="form-control" name="address" value="{{ $setting->address }}"/>
 
                             @error('address')
                             <span class="text-danger">{{ $message }}</span>
@@ -106,12 +106,34 @@
                         </div>
                     </div>
                     <!-- /.card-body -->
-                    <div class="card-footer">
-                        <button type="button" class="btn btn-default">Hủy</button>
-                        <button type="submit" class="btn btn-primary">Lưu</button>
-                    </div>
+
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Đối tác</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="formFilePartner" class="form-label">Hình ảnh</label>
+                            <input type="file" id="formFilePartner" name="partner_image" onchange="previewImagePartner(event)">
+                            @error('partner_image')
+                            <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                            <div class="mt-3">
+                                <img src="{{ asset('storage/') . '/' .$setting->partner_image }}" alt=""
+                                     id="preview_partner_image" class="img-fluid" style="height: 300px">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-default">Hủy</button>
+            <button type="submit" class="btn btn-primary">Lưu</button>
         </div>
     </form>
 @endsection
@@ -135,8 +157,8 @@
             reader.readAsDataURL(event.target.files[0]);
         }
 
-        function previewImageMobile(event) {
-            var preview = document.getElementById('preview-mobile');
+        function previewImagePartner(event) {
+            var preview = document.getElementById('preview_partner_image');
             var reader = new FileReader();
             reader.onload = function () {
                 preview.src = reader.result;

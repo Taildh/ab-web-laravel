@@ -4,10 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ConstructionRequest;
-use App\Jobs\StoreConstructionImageJob;
 use App\Models\Construction;
 use App\Models\ConstructionImages;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
@@ -57,19 +55,20 @@ class ConstructionController extends Controller
             }
 
             DB::commit();
-
-            return redirect()->route('construction.index')->with('success', 'Lưu công trình thành công');
+            return response()->json(['success' => true, 'message' => 'Lưu công trình thành công.']);
         } catch (\Exception $exception) {
             DB::rollBack();
             Log::error($exception);
-            return redirect()->route('construction.index')->with('error', 'Có lỗi khi lưu công trình');
+            return response()->json(['error' => true, 'message' => 'Có lỗi khi lưu công trình.']);
         }
     }
 
 
     public function edit($id)
     {
-        $construction = Construction::findOrFail($id);
+        $construction = Construction::with(['images' => function ($query) {
+            $query->orderBy('created_at', 'desc');
+        }])->findOrFail($id);
         return view('backend.construction.save', compact('construction'));
     }
 

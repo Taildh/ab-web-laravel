@@ -24,6 +24,7 @@ class SettingRequest extends FormRequest
         return [
             'introduce_text' => 'required',
             'introduce_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'partner_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
             'facebook_url' => 'nullable|url|max:255',
             'instagram_url' => 'nullable|url|max:255',
             'email' => 'nullable|email|max:255',
@@ -38,6 +39,8 @@ class SettingRequest extends FormRequest
             'introduce_text.required' => 'Vui lòng nhập nội dung',
             'introduce_image.image' => 'File được tải lên không phải là file ảnh',
             'introduce_image.mimes' => 'Vui lòng chọn file với định dạng: jpeg, png, jpg',
+            'partner_image.image' => 'File được tải lên không phải là file ảnh',
+            'partner_image.mimes' => 'Vui lòng chọn file với định dạng: jpeg, png, jpg',
             'facebook_url.url' => 'Vui lòng nhập vào một url',
             'instagram_url.url' => 'Vui lòng nhập vào một url',
             'email.email' => 'Vui lòng nhập đúng định dạng email',

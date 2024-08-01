@@ -31,10 +31,9 @@
             </div>
             <div class="nav">
                 <li><a href="#index" class="scroll-link active" onclick="scrollToTop()">trang chủ</a></li>
-                <li><a href="#gioi-thieu" class="scroll-link" onclick="scrollToCenter('gioi-thieu')">giới
-                        thiệu</a></li>
-                <li><a href="#cong-trinh" class="scroll-link" onclick="scrollToCenter('cong-trinh')">công trình</a>
-                </li>
+                <li><a href="#gioi-thieu" class="scroll-link" onclick="scrollToCenter('gioi-thieu')">giới thiệu</a></li>
+                <li><a href="#doi-tac" class="scroll-link" onclick="scrollToCenter('gioi-thieu')">đối tác</a></li>
+                <li><a href="#cong-trinh" class="scroll-link" onclick="scrollToCenter('cong-trinh')">công trình</a></li>
                 <li><a href="#lien-he" class="scroll-link" onclick="scrollToCenter('lien-he')">liên hệ</a></li>
             </div>
             <div class="toggle-menu">
@@ -75,10 +74,21 @@
             </div>
         </div>
     </section>
+    <section class="section-fade-in" id="doi-tac">
+        <div class="partner-wrapper">
+            <div class="line"></div>
+            <h1 class="heading">02. Đối tác</h1>
+            <div class="partner-content mt-5">
+                <div class="partner-image">
+                    <img src="{{ asset('storage/') . '/' .$setting->partner_image }}" class="img-fluid" alt="partner">
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="section-fade-in" id="cong-trinh">
         <div class="project-category-wrapper">
             <div class="line"></div>
-            <h1 class="heading">02. Công trình</h1>
+            <h1 class="heading">03. Công trình</h1>
             <div class="project-list">
                 @foreach($constructions as $item)
                     <div class="project-item section-fade-in" data-id="{{ $item->id }}">
@@ -101,7 +111,7 @@
     <section class="section-fade-in" id="lien-he">
         <div class="contact-wrapper">
             <div class="line"></div>
-            <h1 class="heading">03. Liên hệ</h1>
+            <h1 class="heading">04. Liên hệ</h1>
             <div class="contact-info">
                 <a class="mail" href="{{ $setting->email }}">{{ $setting->email }}</a>
                 <span class="hotline"> Hotline: {{ substr($setting->phone_number, 0, 4) . '.' . substr($setting->phone_number, 4, 3) . '.' . substr($setting->phone_number, 7) }}</span>

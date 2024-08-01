@@ -1,5 +1,13 @@
 @extends('layouts.main')
 
+@section('style')
+    <style>
+        .alert {
+            display: none;
+        }
+    </style>
+@endsection
+
 @section('breadcrumb')
     <div class="row mb-2">
         <div class="col-sm-6">
@@ -16,16 +24,10 @@
 
 @section('content')
     <div class="col-12">
-        @if(session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
-            </div>
-        @endif
-        @if(session('error'))
-            <div class="alert alert-danger">
-                {{ session('error') }}
-            </div>
-        @endif
+        <div class="alert alert-success">
+        </div>
+        <div class="alert alert-danger">
+        </div>
         <div class="card">
             <div class="card-header ">
                 <div class="d-flex justify-content-between align-items-center">
@@ -55,13 +57,15 @@
                             <td>
                                 <div class="d-flex">
                                     <a class="btn btn-primary mx-1"
-                                            href="{{ route('construction.edit', ['id' => $item->id]) }}">
+                                       href="{{ route('construction.edit', ['id' => $item->id]) }}">
                                         <i class="fa fa-pen"></i>
                                     </a>
-                                    <form action="{{ route('construction.destroy', ['id' => $item->id]) }}" id="{{ 'delete-form-' . $item->id }}" method="post">
+                                    <form action="{{ route('construction.destroy', ['id' => $item->id]) }}"
+                                          id="{{ 'delete-form-' . $item->id }}" method="post">
                                         @csrf
                                         @method('delete')
-                                        <button class="btn btn-danger mx-1"  type="button" onclick="confirmDelete({{ $item->id }})">
+                                        <button class="btn btn-danger mx-1" type="button"
+                                                onclick="confirmDelete({{ $item->id }})">
                                             <i class="fa fa-trash"></i>
                                         </button>
                                     </form>
@@ -97,11 +101,25 @@
                 "info": true,
                 "autoWidth": false,
                 "responsive": true,
-                ajax:
             });
 
         });
 
+        $(document).ready(function () {
+            const successMessage = sessionStorage.getItem('successMessage');
+            const errorMessage = sessionStorage.getItem('errorMessage');
+            console.log(successMessage);
+            if (successMessage) {
+                $(".alert-success").show();
+                $('.alert-success').text(successMessage);
+                sessionStorage.removeItem('successMessage');
+            }
 
+            if (errorMessage) {
+                $(".alert-danger").show();
+                $('.alert-danger').text(successMessage);
+                sessionStorage.removeItem('errorMessage');
+            }
+        });
     </script>
 @endsection
