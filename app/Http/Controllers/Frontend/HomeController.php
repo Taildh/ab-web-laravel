@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     public function index() {
         $banner = Banner::first();
-        $constructions = Construction::all();
+        $constructions = Construction::orderBy('created_at', 'desc')->get();
         $setting = Setting::first() ?? new Setting();
 
         return view('index', compact('banner', 'constructions', 'setting'));

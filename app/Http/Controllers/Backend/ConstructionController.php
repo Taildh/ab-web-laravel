@@ -13,7 +13,7 @@ class ConstructionController extends Controller
 {
     public function index()
     {
-        $constructions = Construction::all();
+        $constructions = Construction::orderBy('created_at', 'desc')->get();
         return view('backend.construction.index', compact('constructions'));
     }
 
