@@ -26,7 +26,7 @@
         <div class="header-wrapper">
             <div class="logo" onclick="scrollToTop()">
                 <a href="#">
-                    <img src="{{ asset('frontend/images/logo.png') }}" alt="" class="image-logo">
+                    <img src="{{ asset('storage/') . '/' .$setting->logo }}" alt="" class="image-logo">
                 </a>
             </div>
             <div class="nav">

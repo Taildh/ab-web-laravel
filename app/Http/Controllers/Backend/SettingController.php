@@ -48,6 +48,14 @@ class SettingController extends Controller
                 $setting->partner_image = $path;
             }
 
+            if ($request->hasFile('logo')) {
+                $file = $request->file('logo');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . '.' . $extension;
+                $path = $request->file('logo')->storeAs('settings', $filename, 'public');
+                $setting->logo = $path;
+            }
+
             $setting->save();
 
             return redirect()->route('settings.index')->with('success', 'Thiết lập thành công');
